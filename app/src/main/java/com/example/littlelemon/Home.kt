@@ -17,7 +17,7 @@ fun Home(navController: NavController){
             onClick = {
                 navController.navigate(Profile.route)
             }) {
-                Text(text = "Profile")
+                Text(text = "P")
         }
     }
 
