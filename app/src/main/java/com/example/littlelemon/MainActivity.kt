@@ -15,10 +15,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.littlelemon.ui.theme.LittleLemonTheme
+import io.ktor.client.HttpClient
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             LittleLemonTheme {
                 // A surface container using the 'background' color from the theme
@@ -26,7 +28,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val sharedPreferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE)
+                    val sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE)
                     var loginStatusPref = sharedPreferences.getBoolean("LoginStatus", false)
                     val loginStatus by remember { mutableStateOf(loginStatusPref) }
 
